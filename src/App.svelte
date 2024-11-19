@@ -1,44 +1,58 @@
 <script>
-  import { writable } from 'svelte/store';
   import TailwindDemo from './lib/TailwindDemo.svelte';
   import BootstrapDemo from './lib/BootstrapDemo.svelte';
   import BulmaDemo from './lib/BulmaDemo.svelte';
-
-  const count = writable(0);
-  
-  const frameworks = {
-    tailwind: {
-      name: 'Tailwind CSS',
-      component: TailwindDemo
-    },
-    bootstrap: {
-      name: 'Bootstrap',
-      component: BootstrapDemo
-    },
-    bulma: {
-      name: 'Bulma',
-      component: BulmaDemo
-    }
-  };
 </script>
 
-<div class="container mx-auto p-4 max-w-[1400px]">
-  <h2 class="text-2xl font-bold mb-6 text-center">CSS Framework Comparison</h2>
+<div class="comparison-container">
+  <h1 class="text-2xl font-bold text-center mb-8 text-gray-800">CSS Framework Comparison</h1>
   
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    {#each Object.entries(frameworks) as [key, framework]}
-      <div class="p-6 bg-gray-50 rounded-lg">
-        <h3 class="text-xl font-bold mb-6 text-center">{framework.name}</h3>
-        <svelte:component this={framework.component} {count} />
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-800">
+    <div class="framework-card">
+      <h2 class="text-xl font-bold text-center mb-6">
+      <img src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" alt="Tailwind CSS Logo" class="inline-block h-6" />
+      </h2>
+      <div class="framework-content">
+      <TailwindDemo />
       </div>
-    {/each}
+    </div>
+
+    <div class="framework-card">
+      <h2 class="text-xl font-bold text-center mb-6">
+      <img src="https://camo.githubusercontent.com/3fd9366fc9c6ab48dc26c1d989cf5ffadc55d5266ed49c67efa5931fd3a83ec9/68747470733a2f2f676574626f6f7473747261702e636f6d2f646f63732f352e332f6173736574732f6272616e642f626f6f7473747261702d6c6f676f2d736861646f772e706e67" alt="Bootstrap Logo" class="inline-block h-10 mr-2" />
+      Bootstrap
+      </h2>
+      <div class="framework-content">
+      <BootstrapDemo />
+      </div>
+    </div>
+
+    <div class="framework-card">
+      <h2 class="text-xl font-bold text-center mb-6"> 
+        <img src="https://raw.githubusercontent.com/jgthms/bulma/refs/heads/main/docs/assets/brand/Bulma%20Logo.svg" alt="Bulma Logo" class="inline-block h-6 mr-2" />
+      </h2>
+      <div class="framework-content">
+        <BulmaDemo />
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
-  :global(body) {
-    margin: 0;
-    font-family: system-ui, sans-serif;
-    background-color: white;
+  .comparison-container {
+    padding: 1rem;
+  }
+
+  .framework-card {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
   }
 </style>

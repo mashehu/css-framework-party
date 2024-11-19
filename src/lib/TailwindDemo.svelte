@@ -1,21 +1,47 @@
 <script>
-  export let count;
 </script>
 
-<div class="space-y-6">
+<div class="space-y-6 prose">
   <!-- Button Demo -->
   <section>
     <h4 class="text-sm font-semibold mb-2">Buttons</h4>
     <div class="space-y-2">
-      <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-colors" on:click={() => $count += 1}>
-        Primary ({$count})
-      </button>
+      <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Primary</button>
+      
       <button class="w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-full transition-colors">
         Secondary
       </button>
       <button class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-colors">
         Danger
       </button>
+      <button class="w-full hover:bg-blue-50 border-2 border-blue-500 border-solid text-blue-500 font-bold py-2 px-6 rounded-full transition-colors">
+        Primary Outlined
+      </button>
+      <button class="w-full hover:bg-gray-50 border-2 border-gray-500 border-solid text-gray-500 font-bold py-2 px-6 rounded-full transition-colors">
+        Secondary Outlined
+      </button>
+      <button class="w-full hover:bg-red-50 border-2 border-red-500 border-solid text-red-500 font-bold py-2 px-6 rounded-full transition-colors">
+        Danger Outlined
+      </button>
+    </div>
+  </section>
+
+    <!-- Button Group Demo -->
+  <section>
+    <h4 class="text-sm font-semibold mb-2">Button Group</h4>
+    <div class="space-y-4">
+      <!-- Solid Variant -->
+      <div class="inline-flex rounded-md shadow-sm" role="group">
+        <button class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
+          Left
+        </button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
+          Middle
+        </button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
+          Right
+        </button>
+      </div>
     </div>
   </section>
 
@@ -54,11 +80,11 @@
     <div class="space-y-4">
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Input Field</label>
-        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter text..."/>
+        <input type="text" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter text..."/>
       </div>
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Select Menu</label>
-        <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <select class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
           <option>Option 1</option>
           <option>Option 2</option>
           <option>Option 3</option>
@@ -87,4 +113,6 @@
       </div>
     </nav>
   </section>
+
+
 </div>
